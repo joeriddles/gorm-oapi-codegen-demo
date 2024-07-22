@@ -16,7 +16,14 @@ type Server struct {
 }
 
 func NewServer() *Server {
-	return &Server{}
+	return &Server{
+    ManufacturerController: NewManufacturerController(),
+    ModelController: NewModelController(),
+    VehicleController: NewVehicleController(),
+    PartController: NewPartController(),
+    PersonController: NewPersonController(),
+    
+  }
 }
 
 func (s *Server) GetManufacturer(ctx context.Context, request GetManufacturerRequestObject) (GetManufacturerResponseObject, error) {
