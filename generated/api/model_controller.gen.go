@@ -4,7 +4,7 @@ package api
 import (
   "context"
 
-  "github.com/joeriddles/gorm-oapi-codegen-demo/repository"
+  "github.com/joeriddles/gorm-oapi-codegen-demo/generated/repository"
 )
 
 type ModelController interface {

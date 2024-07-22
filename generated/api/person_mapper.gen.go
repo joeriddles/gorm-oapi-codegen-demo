@@ -3,7 +3,7 @@ package api
 
 import (
 	"gorm.io/gorm"
-  model "github.com/joeriddles/gorm-oapi-codegen-demo/main"
+  model "github.com/joeriddles/gorm-oapi-codegen-demo/pkg/model"
 )
 
 type PersonMapper interface {
