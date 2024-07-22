@@ -4,7 +4,7 @@ package api
 import (
   "context"
 
-  "github.com/joeriddles/cars-demo/repository"
+  "github.com/joeriddles/gorm-oapi-codegen-demo/repository"
 )
 
 type VehicleController interface {

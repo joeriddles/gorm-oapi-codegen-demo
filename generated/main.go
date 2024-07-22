@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/joeriddles/cars-demo/api"
+	"github.com/joeriddles/gorm-oapi-codegen-demo/api"
 )
 
 func main() {

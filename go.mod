@@ -1,4 +1,4 @@
-module github.com/joeriddles/cars-demo
+module github.com/joeriddles/gorm-oapi-codegen-demo
 
 go 1.22.4
 

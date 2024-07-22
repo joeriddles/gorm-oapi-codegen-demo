@@ -4,7 +4,7 @@ package repository
 import (
   "context"
 
-  model "github.com/joeriddles/cars-demo/main"
+  model "github.com/joeriddles/gorm-oapi-codegen-demo/main"
 )
 
 type PartRepository interface {

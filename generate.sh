@@ -1,5 +1,5 @@
 gorm-oapi-codegen \
   -o ./generated \
-  -module github.com/joeriddles/cars-demo \
-  -pkg github.com/joeriddles/cars-demo/main \
+  -module github.com/joeriddles/gorm-oapi-codegen-demo \
+  -pkg github.com/joeriddles/gorm-oapi-codegen-demo/main \
   .
