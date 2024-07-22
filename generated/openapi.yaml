@@ -1,0 +1,706 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Generated API
+paths:
+  /manufacturer:
+    get:
+      tags:
+        - manufacturer
+      summary: Get all Manufacturers
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Manufacturer'
+    post:
+      tags:
+        - manufacturer
+      summary: Create a new Manufacturer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateManufacturer'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Manufacturer'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /manufacturer/{id}/:
+    get:
+      tags:
+        - manufacturer
+      summary: Get a Manufacturer by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            $ref: '#/components/schemas/id'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Manufacturer'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    put:
+      tags:
+        - manufacturer
+      summary: Update a Manufacturer by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            $ref: '#/components/schemas/id'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateManufacturer'
+      responses:
+        '204':
+          description: Updated
+        '404':
+          $ref: '#/components/responses/NotFound'
+    delete:
+      tags:
+        - manufacturer
+      summary: Delete a Manufacturer by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            $ref: '#/components/schemas/id'
+      responses:
+        '204':
+          description: Deleted
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /model:
+    get:
+      tags:
+        - model
+      summary: Get all Models
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Model'
+    post:
+      tags:
+        - model
+      summary: Create a new Model
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateModel'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Model'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /model/{id}/:
+    get:
+      tags:
+        - model
+      summary: Get a Model by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            $ref: '#/components/schemas/id'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Model'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    put:
+      tags:
+        - model
+      summary: Update a Model by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            $ref: '#/components/schemas/id'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateModel'
+      responses:
+        '204':
+          description: Updated
+        '404':
+          $ref: '#/components/responses/NotFound'
+    delete:
+      tags:
+        - model
+      summary: Delete a Model by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            $ref: '#/components/schemas/id'
+      responses:
+        '204':
+          description: Deleted
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /vehicle:
+    get:
+      tags:
+        - vehicle
+      summary: Get all Vehicles
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Vehicle'
+    post:
+      tags:
+        - vehicle
+      summary: Create a new Vehicle
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateVehicle'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Vehicle'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /vehicle/{id}/:
+    get:
+      tags:
+        - vehicle
+      summary: Get a Vehicle by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            $ref: '#/components/schemas/id'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Vehicle'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    put:
+      tags:
+        - vehicle
+      summary: Update a Vehicle by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            $ref: '#/components/schemas/id'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateVehicle'
+      responses:
+        '204':
+          description: Updated
+        '404':
+          $ref: '#/components/responses/NotFound'
+    delete:
+      tags:
+        - vehicle
+      summary: Delete a Vehicle by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            $ref: '#/components/schemas/id'
+      responses:
+        '204':
+          description: Deleted
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /part:
+    get:
+      tags:
+        - part
+      summary: Get all Parts
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Part'
+    post:
+      tags:
+        - part
+      summary: Create a new Part
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreatePart'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Part'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /part/{id}/:
+    get:
+      tags:
+        - part
+      summary: Get a Part by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            $ref: '#/components/schemas/id'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Part'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    put:
+      tags:
+        - part
+      summary: Update a Part by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            $ref: '#/components/schemas/id'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdatePart'
+      responses:
+        '204':
+          description: Updated
+        '404':
+          $ref: '#/components/responses/NotFound'
+    delete:
+      tags:
+        - part
+      summary: Delete a Part by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            $ref: '#/components/schemas/id'
+      responses:
+        '204':
+          description: Deleted
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /person:
+    get:
+      tags:
+        - person
+      summary: Get all Persons
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Person'
+    post:
+      tags:
+        - person
+      summary: Create a new Person
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreatePerson'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Person'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /person/{id}/:
+    get:
+      tags:
+        - person
+      summary: Get a Person by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            $ref: '#/components/schemas/id'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Person'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    put:
+      tags:
+        - person
+      summary: Update a Person by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            $ref: '#/components/schemas/id'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdatePerson'
+      responses:
+        '204':
+          description: Updated
+        '404':
+          $ref: '#/components/responses/NotFound'
+    delete:
+      tags:
+        - person
+      summary: Delete a Person by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            $ref: '#/components/schemas/id'
+      responses:
+        '204':
+          description: Deleted
+        '404':
+          $ref: '#/components/responses/NotFound'
+components:
+  schemas:
+    id:
+      type: integer
+      format: int64
+      description: A unique id to represent a resource
+      minimum: 0
+    Manufacturer:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/id'
+        name:
+          type: string
+        vehicles:
+          type: array
+          items:
+            $ref: '#/components/schemas/Model'
+      required:
+        - id
+        - name
+        - vehicles
+    Model:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/id'
+        name:
+          type: string
+        manufacturer_id:
+          type: integer
+        manufacturer:
+          $ref: '#/components/schemas/Manufacturer'
+        parts:
+          type: array
+          items:
+            $ref: '#/components/schemas/Part'
+      required:
+        - id
+        - name
+        - manufacturer_id
+        - manufacturer
+        - parts
+    Part:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/id'
+        name:
+          type: string
+        cost:
+          type: integer
+        models:
+          type: array
+          items:
+            $ref: '#/components/schemas/Model'
+      required:
+        - id
+        - name
+        - cost
+        - models
+    CreateManufacturer:
+      type: object
+      properties:
+        name:
+          type: string
+        vehicles:
+          type: array
+          items:
+            $ref: '#/components/schemas/Model'
+      required:
+        - name
+        - vehicles
+    ErrorResponse:
+      type: object
+      properties:
+        code:
+          type: string
+          description: The error code's unique identifier
+        message:
+          type: string
+          description: The error code's detailed message providing information about itself
+      required:
+        - code
+        - message
+    UpdateManufacturer:
+      type: object
+      properties:
+        name:
+          type: string
+        vehicles:
+          type: array
+          items:
+            $ref: '#/components/schemas/Model'
+    CreateModel:
+      type: object
+      properties:
+        name:
+          type: string
+        manufacturer_id:
+          type: integer
+        manufacturer:
+          $ref: '#/components/schemas/Manufacturer'
+        parts:
+          type: array
+          items:
+            $ref: '#/components/schemas/Part'
+      required:
+        - name
+        - manufacturer_id
+        - manufacturer
+        - parts
+    UpdateModel:
+      type: object
+      properties:
+        name:
+          type: string
+        manufacturer_id:
+          type: integer
+        manufacturer:
+          $ref: '#/components/schemas/Manufacturer'
+        parts:
+          type: array
+          items:
+            $ref: '#/components/schemas/Part'
+    Person:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/id'
+        name:
+          type: string
+      required:
+        - id
+        - name
+    Vehicle:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/id'
+        vin:
+          type: string
+        vehicle_model_id:
+          type: integer
+        vehicle_model:
+          $ref: '#/components/schemas/Model'
+        person_id:
+          type: integer
+        person:
+          $ref: '#/components/schemas/Person'
+      required:
+        - id
+        - vin
+        - vehicle_model_id
+        - vehicle_model
+        - person_id
+        - person
+    CreateVehicle:
+      type: object
+      properties:
+        vin:
+          type: string
+        vehicle_model_id:
+          type: integer
+        vehicle_model:
+          $ref: '#/components/schemas/Model'
+        person_id:
+          type: integer
+        person:
+          $ref: '#/components/schemas/Person'
+      required:
+        - vin
+        - vehicle_model_id
+        - vehicle_model
+        - person_id
+        - person
+    UpdateVehicle:
+      type: object
+      properties:
+        vin:
+          type: string
+        vehicle_model_id:
+          type: integer
+        vehicle_model:
+          $ref: '#/components/schemas/Model'
+        person_id:
+          type: integer
+        person:
+          $ref: '#/components/schemas/Person'
+    CreatePart:
+      type: object
+      properties:
+        name:
+          type: string
+        cost:
+          type: integer
+        models:
+          type: array
+          items:
+            $ref: '#/components/schemas/Model'
+      required:
+        - name
+        - cost
+        - models
+    UpdatePart:
+      type: object
+      properties:
+        name:
+          type: string
+        cost:
+          type: integer
+        models:
+          type: array
+          items:
+            $ref: '#/components/schemas/Model'
+    CreatePerson:
+      type: object
+      properties:
+        name:
+          type: string
+      required:
+        - name
+    UpdatePerson:
+      type: object
+      properties:
+        name:
+          type: string
+  responses:
+    BadRequest:
+      description: Bad request - Contents of the request are unexpected
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Conflict:
+      description: Conflict - Operation would result in resource conflicts
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    NotFound:
+      description: Not Found - Specified resource could not be located
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
